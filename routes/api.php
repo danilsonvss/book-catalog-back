@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\WeatherController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +29,7 @@ Route::middleware(['auth:sanctum'])->group(function() {
     Route::post('/books', [BookController::class, 'create']);
     Route::put('/books/{id}', [BookController::class, 'update']);
     Route::delete('/books/{id}', [BookController::class, 'delete']);
+
+    // Clima
+    Route::get('/weather', [WeatherController::class, 'get']);
 });
