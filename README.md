@@ -15,7 +15,7 @@ composer install
 ./vendor/bin/sail up -d
 ```
 
-## Rodando as migrations e populandos o banco de dados com a seed do usuário padrão
+## Rodando as migrations e populandos o banco de dados
 ```
 # Cria as tabelas no banco de dados criado pelo sail presente no .env
 ./vendor/bin/sail artisan migrate
