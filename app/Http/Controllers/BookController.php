@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Validator;
 
 class BookController extends Controller
@@ -18,7 +20,22 @@ class BookController extends Controller
             registration_at
         */
 
-        $books = (empty($bookId)) ? Book::orderBy('id', 'desc')->simplePaginate(10) : Book::find($bookId);
+        $input = $request->only('filter');
+
+        if (!empty($input['filter'])) {
+            $filter = $input['filter'];
+            $date = (DateTime::createFromFormat('d/m/Y', $filter));
+            $filterDate = ($date) ? $date->format('Y-m-d') : '';
+
+            $books = Book::where('title', 'like', "%$filter%")
+                ->orWhere('author', 'like', "%$filter%")
+                ->orWhere('description', 'like', "%$filter%")
+                ->orWhere('registration_at', '=', $filterDate)
+                ->orderBy('id', 'desc')->simplePaginate(10);
+        } else {
+            $books = (empty($bookId)) ? Book::orderBy('id', 'desc')->simplePaginate(10) : Book::find($bookId);
+        }
+
         return response()->json($books);
     }
 
