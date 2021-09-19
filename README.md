@@ -4,7 +4,11 @@
 
 Rode os comandos abaixo para iniciar a configuração e instalação do projeto.
 
-### Configurando o container do docker
+```
+composer install
+```
+
+## Configurando o container do docker
 
 ```bash
 # Instalar imagens e criar containers docker
