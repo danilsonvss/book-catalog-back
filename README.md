@@ -10,6 +10,11 @@ composer install
 
 ## Configurando o container do docker
 
+Importante: O container do sail está configurado para rodar na porta 80, caso haja algum serviço nesta porta,
+é aconselhável parar o mesmo antes de subir o container da aplicação.
+Outra alternativa é alterar a porta no .env adicionando a propriedade `APP_PORT`.
+Exemplo: `APP_PORT=800`
+
 ```bash
 # Instalar imagens e criar containers docker
 ./vendor/bin/sail up -d
