@@ -36,6 +36,13 @@ class BookController extends Controller
             $books = (empty($bookId)) ? Book::orderBy('id', 'desc')->simplePaginate(10) : Book::find($bookId);
         }
 
+        if (empty($books)) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Nenhum livro encontrado.'
+            ]);
+        }
+
         return response()->json($books);
     }
 
