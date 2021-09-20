@@ -8,7 +8,7 @@ class WeatherController extends Controller
 {
     public function get(Request $request)
     {
-        $key = '9b899196';
+        $key = env('HG_APP_KEY');
         $params = $request->only('lat', 'lon');
         $lat = $params['lat'];
         $lon = $params['lon'];

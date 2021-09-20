@@ -28,3 +28,12 @@ Exemplo: `APP_PORT=800`
 # Alimenta o banco de dados criando o usuário padrão
 ./vendor/bin/sail artisan db:seed
 ```
+
+## Configurando a API do HGBrasil para obter o clima
+Documentação: https://console.hgbrasil.com/
+
+Adicione sua chave da API ao `.env` conforme abaixo
+
+```
+HG_APP_KEY=DIGITE_SUA_CHAVE_AQUI
+```
