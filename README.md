@@ -16,6 +16,10 @@ Outra alternativa é alterar a porta no .env adicionando a propriedade `APP_PORT
 Exemplo: `APP_PORT=800`
 
 ```bash
+cp .env.example .env
+```
+
+```bash
 # Instalar imagens e criar containers docker
 ./vendor/bin/sail up -d
 ```
