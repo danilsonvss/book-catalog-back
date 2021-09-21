@@ -23,6 +23,8 @@ Exemplo: `APP_PORT=800`
 ## Rodando as migrations e populando o banco de dados
 ```
 # Cria as tabelas no banco de dados criado pelo sail presente no .env
+./vendor/bin/sail artisan key:generate
+
 ./vendor/bin/sail artisan migrate
 
 # Alimenta o banco de dados criando o usuário padrão
