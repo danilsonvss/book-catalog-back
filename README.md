@@ -37,6 +37,7 @@ cp .env.example .env
 ```
 
 ## Configurando a API do HGBrasil para obter o clima
+Para configurar acesso a API do HGBrasil, você pode criar uma conta gratuita no site.
 Documentação: https://console.hgbrasil.com/
 
 Adicione sua chave da API ao `.env` conforme abaixo
