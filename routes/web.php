@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return json_encode([
+        'current_time' => date('Y-m-d H:i:s')
+    ]);
 });
