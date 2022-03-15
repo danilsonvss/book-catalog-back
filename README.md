@@ -13,7 +13,7 @@ composer install
 Importante: O container do sail está configurado para rodar na porta 80, caso haja algum serviço nesta porta,
 é aconselhável parar o mesmo antes de subir o container da aplicação.
 Outra alternativa é alterar a porta no .env adicionando a propriedade `APP_PORT`.
-Exemplo: `APP_PORT=800`
+Exemplo: `APP_PORT=8000`
 
 ```bash
 cp .env.example .env
@@ -37,6 +37,7 @@ cp .env.example .env
 ```
 
 ## Configurando a API do HGBrasil para obter o clima
+Para configurar acesso a API do HGBrasil, você pode criar uma conta gratuita no site.
 Documentação: https://console.hgbrasil.com/
 
 Adicione sua chave da API ao `.env` conforme abaixo
